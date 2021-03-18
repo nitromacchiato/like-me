@@ -11,17 +11,12 @@
   font-family: Gosha Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 38px;
 
   color:black;
 
 }
-
-
-
-
-
 
 
 /* Description */
@@ -64,43 +59,6 @@
 
 
 
-/*  DESKTOP */
-@media (max-width: 1024px){
-  .desktop-align{
-    margin-left: 10em !important;
-  }
-
-
-  .desktop-style{
-    margin-left:0em;
-    max-width: 200px;
-  }
-
-  .title-font-style{
-    height: 70px imp !important;
-  }
-}
-
-
-@media (max-width: 786px){
-  .title-font-style{
-    width: auto;
-    left: 51px;
-    top: 96px;
-  
-    font-family: Gosha Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 22px !important;
-    line-height: 58px;
-  
-    color: #000000;
-  }
-  
-  
-}
-
-
 
 
 
@@ -120,4 +78,84 @@
   font-style: normal;
   font-weight: normal;
   font-display: swap;
+}
+
+
+
+
+
+/* Results Page */
+
+.top-result{
+  margin-bottom: auto;
+}
+
+
+.results-container{
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.card-spacing{
+
+  padding-left: 2em;
+  padding-top: 3em;
+}
+
+
+
+
+
+
+/* Screens */
+
+/*  DESKTOP */
+@media (max-width: 1024px){
+  .desktop-align{
+    margin-left: 10em !important;
+  }
+
+
+  .desktop-style{
+    margin-left:0em;
+    max-width: 200px;
+  }
+
+  .title-font-style{
+    height: 70px imp !important;
+  }
+
+  .card-spacing{
+    margin-left: 1em;
+    padding-left: 2em !important;
+    padding-top: 3em;
+  }
+}
+
+
+@media (max-width: 786px){
+  .title-font-style{
+    width: auto;
+    left: 51px;
+    top: 96px;
+  
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px !important;
+    line-height: 58px;
+  
+    color: #000000;
+  }
+  
+
+  .card-spacing{
+    padding-left: 1em !important;
+    padding-top: 3em;
+  }
+  
+  
+  
+  
 }
