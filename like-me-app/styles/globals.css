@@ -1,0 +1,123 @@
+.hero{
+  background: radial-gradient(56.66% 45.7% at 50% 54.3%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(168deg, #EEBFAB 5.58%, rgba(234, 222, 206, 0) 46.81%), #EADBC7;
+}
+
+
+
+
+/* HEADER */
+.header-title{
+
+  font-family: Gosha Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+
+  color:black;
+
+}
+
+
+
+
+
+
+
+/* Description */
+.title-font-style{
+  width: auto;
+  left: 51px;
+  top: 96px;
+
+  font-family: Gosha Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+
+  color: #000000;
+}
+
+
+
+/* How To  */
+.sub-text-font{
+  font-family: Gosha Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+
+.sub-text{
+  font-family: Biotif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+
+  color: #000000;
+}
+
+
+
+
+/*  DESKTOP */
+@media (max-width: 1024px){
+  .desktop-align{
+    margin-left: 10em !important;
+  }
+
+
+  .desktop-style{
+    margin-left:0em;
+    max-width: 200px;
+  }
+
+  .title-font-style{
+    height: 70px imp !important;
+  }
+}
+
+
+@media (max-width: 786px){
+  .title-font-style{
+    width: auto;
+    left: 51px;
+    top: 96px;
+  
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px !important;
+    line-height: 58px;
+  
+    color: #000000;
+  }
+  
+  
+}
+
+
+
+
+
+
+/*  FONTS  */
+@font-face{
+  font-family: "Biotif";
+  src: url("../public/fonts/Biotif/Biotif-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "GoshaSans";
+  src: url("../public/fonts/GoshaSans/GoshaSans-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
