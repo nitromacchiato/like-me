@@ -1,8 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import React, { useState } from "react"
+import { connectToDatabase } from "../util/mongodb"
 import 'bulma/css/bulma.css'
 
-export default function Home() {
+
+
+export default function Home({isConnected, SPOTIFY_AUTH_URL}) {
+
+  console.log(SPOTIFY_AUTH_URL)
+
   return (
     <>
     <Head>
@@ -16,10 +23,10 @@ export default function Home() {
       <section className="hero is-fullheight">
 
         {/* HEADER */}
-        <div class="hero-head" style={{margin:"0 auto"}}>
-          <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-            <div class="column center">
-              <p class="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
+        <div className="hero-head" style={{margin:"0 auto"}}>
+          <div className="columns is-mobile is-marginless heading has-text-weight-bold">
+            <div className="column center">
+              <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
             </div>
           </div>        
         </div>
@@ -28,17 +35,19 @@ export default function Home() {
 
           <div style={{margin:'0 auto',marginBottom:'auto'}}>
 
-            <div class="columns is-mobile is-centered is-vcentered">
-              <div class="column is-two-fifths">
+            <div className="columns is-mobile is-centered is-vcentered">
+              <div className="column is-two-fifths">
                 <span>
         
-                  <p class="title title-font-style hide-mobile" style={{color:'black'}}>Find people with similar music <br/> taste  as you on Spotify</p>
-                  <button className="button is-black desktop-style sub-text">Find Matches</button>
+                  <p className="title title-font-style hide-mobile" style={{color:'black'}}>Find people with similar music <br/> taste  as you on Spotify</p>
+                  <a href={ SPOTIFY_AUTH_URL }>                 
+                    <button className="button is-black desktop-style sub-text">Find Matches</button>
+                  </a>
 
                 </span>
               </div>
 
-              <div class="column">
+              <div className="column">
                 <Image
                 src="/icons/icons8-spotify-500.png"
                 alt="Spotify Logo"
@@ -54,7 +63,7 @@ export default function Home() {
 
             <div className="box has-text-centered" style={{marginTop:'2em'}}>
 
-              <p class="subtitle sub-text-font" style={{color:'black'}}>How It Works</p>
+              <p className="subtitle sub-text-font" style={{color:'black'}}>How It Works</p>
 
               <div className="block" style={{marginRight:'5px',marginLeft:'5px'}}>
                 <p className="block sub-text">1. Connect to your Spotify account</p>
@@ -102,4 +111,17 @@ export default function Home() {
 
   </>   
   )
+}
+
+
+export async function getServerSideProps(context) {
+  const { client } = await connectToDatabase()
+  
+  const isConnected = await client.isConnected()
+
+  const SPOTIFY_AUTH_URL = process.env.SPOTIFY_AUTH_URL
+
+  return {
+    props: {isConnected, SPOTIFY_AUTH_URL },
+  }
 }

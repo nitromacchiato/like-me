@@ -5,6 +5,21 @@ import ProfileCard from '../components/card'
 import 'bulma/css/bulma.css'
 
 export default function Home() {
+
+    if (typeof window !== "undefined") {
+        
+        //Access query Parms 
+        const params = new URLSearchParams(window.location.search)
+        const errorStatus = params.has('error')
+        const token = params.get('code')
+    
+        console.log(token)
+        console.log(errorStatus)
+    }
+    
+
+
+
   return (
     <>
     <Head>
