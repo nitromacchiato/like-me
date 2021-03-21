@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from "react"
-import { connectToDatabase } from "../util/mongodb"
 import 'bulma/css/bulma.css'
 
 
 
-export default function Home({isConnected, SPOTIFY_AUTH_URL}) {
+export default function Home({SPOTIFY_AUTH_URL}) {
 
   console.log(SPOTIFY_AUTH_URL)
 
@@ -115,13 +114,11 @@ export default function Home({isConnected, SPOTIFY_AUTH_URL}) {
 
 
 export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase()
-  
-  const isConnected = await client.isConnected()
+
 
   const SPOTIFY_AUTH_URL = process.env.SPOTIFY_AUTH_URL
 
   return {
-    props: {isConnected, SPOTIFY_AUTH_URL },
+    props: { SPOTIFY_AUTH_URL },
   }
 }
