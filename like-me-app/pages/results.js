@@ -23,7 +23,7 @@ export default function Home() {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code: code })
+      body: JSON.stringify({ code: code, secret: process.env.LIKE_ME_API_KEY })
     };
     fetch('http://localhost:3000/api/insert', requestOptions)
         .then(response => response.json())
@@ -118,3 +118,5 @@ export default function Home() {
   </>   
   )
 }
+
+
