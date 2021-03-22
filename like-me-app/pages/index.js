@@ -7,7 +7,6 @@ import 'bulma/css/bulma.css'
 
 export default function Home({SPOTIFY_AUTH_URL}) {
 
-  console.log(SPOTIFY_AUTH_URL)
 
   return (
     <>
