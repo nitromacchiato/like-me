@@ -131,7 +131,7 @@ export async function getServerSideProps({query}) {
     body: JSON.stringify({ code: token, secret: process.env.LIKE_ME_API_KEY })
   };
 
-  const getMatches = await fetch('http://localhost:3000/api/insert', requestOptions)
+  const getMatches = await fetch('https://like-me-seven.vercel.app/api/insert', requestOptions)
   const matchesData = await getMatches.json()
 
 
