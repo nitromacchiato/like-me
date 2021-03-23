@@ -5,8 +5,9 @@ import { useState } from 'react'
 import ProfileCard from '../components/card'
 import 'bulma/css/bulma.css'
 
-export default function Home() {
+export default function Results({matches}) {
 
+  const [count,setCount] = useState(0)
 
   return (
     <>
@@ -36,17 +37,26 @@ export default function Home() {
           <div className="top-result">
               <ProfileCard/>
 
-              <div className="box has-text-centered">
-                  <p>You and Andy have <strong>4091</strong> songs in common! Thats a lot of songs.</p>
-                  <br/>
 
-                  <p> Click on any profile card to view the users Spotify's page</p>
-              </div>
+              {/*  Display Results  */}
+              {
+                <>
+                  {/* <ProfileCard displayName={matches[-1]} profileImage={matches[-1][2]} percentage={matches[-1][3]} profilePage={matches[-1][1]}/> */}
+
+                  <div className="box has-text-centered">
+                    <p>You and {matches[0]} have the most songs in common!</p>
+                    <br/>
+
+                    <p> Click on any profile card to view the users Spotify's page</p>
+                  </div>
+
+                </>
+              }
+
+
 
               <div className="results-container" style={{maxWidth:'521px'}}>
-                  <div className="card-spacing">
-                      <ProfileCard/>
-                  </div>
+
                   <div className="card-spacing">
                       <ProfileCard/>
                   </div>
@@ -100,14 +110,22 @@ export async function getServerSideProps({query}) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ code: token, secret: process.env.LIKE_ME_API_KEY })
   };
-  fetch('http://localhost:3000/api/insert', requestOptions)
-  
 
-    
+  const getMatches = await fetch('http://localhost:3000/api/insert', requestOptions)
+  const matches = await getMatches.json()
+
+
+  
+  matches.sort((function(index){
+      return function(a, b){
+          return (a[index] === b[index] ? 0 : (a[index] < b[index] ? -1 : 1));
+      };
+  })(3));
+
 
 
 
   return {
-    props: {}, // will be passed to the page component as props
+    props: {matches}, // will be passed to the page component as props
   }
 }

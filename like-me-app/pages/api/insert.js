@@ -3,8 +3,7 @@ import { connectToDatabase } from "../../util/mongodb"
 import { getRefreshToken } from "../../lib/refreshToken"
 import { getUserInfo } from "../../lib/getCurrentUserInfo"
 import { getSavedTracks } from "../../lib/getSavedTracks"
-
-
+import { match } from "../../lib/match"
 
 
 
@@ -28,7 +27,7 @@ export default async function handler(req,res){
         const accessToken = await getToken['access_token']
 
         // STATUS LOG - TOKEN 
-        console.log('Generated an Access Token')
+        console.log('Successfully Generated an Access Token')
 
         // Retrieve User Information 
         const getUser = await getUserInfo(accessToken)
@@ -41,13 +40,13 @@ export default async function handler(req,res){
         // See if the user already exist in the database 
         const exist = await db.collection('users').find({'user': display_name}).count() > 0;
         
-        console.log('Exist is',exist)
+        console.log('Does the user exist in the database:',exist)
 
         if(exist != true){
 
             // User Profile Picture 
-            let image = user['images']
-            if(image === undefined){
+            let image = user['images'][0]['url']
+            if(image.length === 0 || typeof(image) === undefined){
                 image = "../../public/img/user.png"
             }
             const profilePage = `https://open.spotify.com/user/${display_name}`
@@ -126,16 +125,24 @@ export default async function handler(req,res){
             }
 
             // STATUS LOG - USER INFORMATION 
-            console.log('Songs Fully Uploaded')
+            console.log('Succefully Generated Songs Array')
         
         
             // Connect to listings and review
             const data = await db.collection('users').insertOne({user:display_name,profile:profilePage,image:image,songs:tracks});
 
             // STATUS LOG - DATABASE UPDATE 
-            console.log('User Uploaded To Database')
+            console.log('Successfully Uploaded User To Database')
 
-            res.json(data);
+
+
+            // FIND MATCHES 
+            const results = await match(tracks)
+
+   
+
+
+            res.send(results);
 
         } else {
             console.log('User Already Exist')
@@ -144,7 +151,7 @@ export default async function handler(req,res){
 
     } else {
 
-        res.json({error:'Invalid Key'})
+        res.json({error:'Invalid Application Key'})
         
     }
     
