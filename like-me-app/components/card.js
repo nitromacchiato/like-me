@@ -7,17 +7,19 @@ export default function ProfileCard({displayName,profileImage,percentage,profile
         <div className="columns is-multiline is-vcentered is-mobile is-11">
             <div className="column is-one-fifth  box has-text-centered button" style={{margin:"0 auto",width:'154px',height:'180px'}}>
                 <div className="has-text-centered ">
-                    <button href={profilePage}>
+                    <a href={profilePage}  target="_blank">
                         <div>
-                            <figure className="image is-128x128 image_placement">
-                                <img src={profileImage} />
+                            <figure className="image image_placement">
+                                <img style={{maxWidth:'auto',maxHeight:'170px'}} src={profileImage} />
                             </figure>
                         </div>
-                    </button>
+                    </a>
                     
-                    <div>
+                    <div style={{marginTop:'1em'}}>
+                        
                         <p className="has-text-weight-light playlist_subtitles">{displayName}</p>
-                        <p className="has-text-weight-light playlist_subtitles">{percentage}</p>
+                        <p className="has-text-weight-light playlist_subtitles percentage">{percentage}%</p>
+                        
                     </div>
 
                 </div>
