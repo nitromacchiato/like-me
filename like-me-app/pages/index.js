@@ -39,7 +39,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
                 <a href={ SPOTIFY_AUTH_URL }>                 
                   <button className="button is-black desktop-style sub-text">Find Matches</button>
                 </a>
-
+  
               </span>
             </div>
 
