@@ -1,11 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from "react"
+import { useRouter } from 'next/router'
 import 'bulma/css/bulma.css'
 
 
 
 export default function Home({SPOTIFY_AUTH_URL}) {
+
+  const router = useRouter()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    router.push(SPOTIFY_AUTH_URL)
+  }
+
 
 
   return (
@@ -36,9 +45,9 @@ export default function Home({SPOTIFY_AUTH_URL}) {
               <span>
       
                 <p className="title title-font-style hide-mobile" style={{color:'black'}}>Find people with similar music <br/> taste  as you on Spotify</p>
-                <a href={ SPOTIFY_AUTH_URL }>                 
-                  <button className="button is-black desktop-style sub-text">Find Matches</button>
-                </a>
+                             
+                <button className="button is-black desktop-style sub-text" onClick={handleClick}>Find Matches</button>
+                
   
               </span>
             </div>
