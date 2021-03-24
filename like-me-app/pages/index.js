@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from "react"
 import { useRouter } from 'next/router'
 import 'bulma/css/bulma.css'
@@ -31,9 +32,9 @@ export default function Home({SPOTIFY_AUTH_URL}) {
       <div className="hero-head" style={{margin:"0 auto"}}>
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
           <div className="column center">
-            <a href="/">
+            <Link href="https://like-me-seven.vercel.app/">
               <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
-            </a>
+            </Link>
           </div>
         </div>        
       </div>
