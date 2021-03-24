@@ -9,13 +9,6 @@ import 'bulma/css/bulma.css'
 
 export default function Home({SPOTIFY_AUTH_URL}) {
 
-  const router = useRouter()
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    router.push(SPOTIFY_AUTH_URL)
-  }
-
 
 
   return (
@@ -48,9 +41,11 @@ export default function Home({SPOTIFY_AUTH_URL}) {
               <span>
       
                 <p className="title title-font-style hide-mobile" style={{color:'black'}}>Find people with similar music <br/> taste  as you on Spotify</p>
-                             
-                <button className="button is-black desktop-style sub-text" onClick={handleClick}>Find Matches</button>
                 
+
+                <Link href={SPOTIFY_AUTH_URL}>
+                  <button className="button is-black desktop-style sub-text">Find Matches</button>
+                </Link>
   
               </span>
             </div>
@@ -67,7 +62,6 @@ export default function Home({SPOTIFY_AUTH_URL}) {
           </div>
 
 
-          {/* <button className="button is-black block desktop-style sub-text">Find Matches</button> */}
 
           <div className="box has-text-centered" style={{marginTop:'2em'}}>
 
