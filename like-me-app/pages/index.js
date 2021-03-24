@@ -31,7 +31,9 @@ export default function Home({SPOTIFY_AUTH_URL}) {
       <div className="hero-head" style={{margin:"0 auto"}}>
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
           <div className="column center">
-            <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
+            <a href="/">
+              <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
+            </a>
           </div>
         </div>        
       </div>
