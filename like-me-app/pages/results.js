@@ -1,50 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ProfileCard from '../components/card'
 import 'bulma/css/bulma.css'
 
 
-export default function Results({appKey}) {
-
-
-  const [loading,setLoading] = useState(true)
-
-
-  const token = query.code
-
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: token, secret: appKey })
-  };
-
-  const getMatches = await fetch('https://like-me-seven.vercel.app/api/insert', requestOptions)
-  const matchesData = await getMatches.json()
-
-
-
-  
-  matchesData.sort((function(index){
-      return function(a, b){
-          return (a[index] === b[index] ? 0 : (a[index] < b[index] ? -1 : 1));
-      };
-  })(3));
-
-
-  const matches = matchesData.reverse()
-
-  useEffect(() => {
-    // Always do navigations after the first render
-    if(matches.length == 0 || matches == undefined || matches === null){
-      setLoading(true)
-    } else {
-      setLoading(false)
-    }
-  })
-  
-
+export default function Results({matches}) {
 
 
   
@@ -86,8 +48,8 @@ export default function Results({appKey}) {
     </Head>
 
 
-    {!loading && 
-      <section className="hero is-fullheight">
+
+    <section className="hero is-fullheight">
 
       {/* HEADER */}
       <div className="hero-head" style={{margin:"0 auto"}}>
@@ -133,20 +95,11 @@ export default function Results({appKey}) {
               <ProfileCard displayName={matches[5][0]} profileImage={matches[5][2]} percentage={Math.round(matches[5][3])} profilePage={matches[5][1]}/>
             </div>
 
+
           </div>
           </div>
         </div>
     </section>
-    }
-
-    {loading && 
-
-      <section>
-        <p>Loading ....</p>
-      </section>
-    
-    }
-
   </>   
   )
 }
@@ -156,12 +109,33 @@ export default function Results({appKey}) {
 export async function getServerSideProps({query}) {
 
 
-  const appKey = proccess.env.LIKE_ME_API_KEY
+  const token = query.code
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: token, secret: process.env.LIKE_ME_API_KEY })
+  };
+
+  const getMatches = await fetch('https://like-me-seven.vercel.app/api/insert', requestOptions)
+  const matchesData = await getMatches.json()
+
+
+
+  
+  matchesData.sort((function(index){
+      return function(a, b){
+          return (a[index] === b[index] ? 0 : (a[index] < b[index] ? -1 : 1));
+      };
+  })(3));
+
+
+  const matches = matchesData.reverse()
 
 
   
 
   return {
-    props: {appKey}, // will be passed to the page component as props
+    props: {matches}, // will be passed to the page component as props
   }
 }
