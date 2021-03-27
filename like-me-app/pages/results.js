@@ -150,7 +150,7 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
   async function GenerateTheMatchesPage(){
 
 
-    const ResultsApi = "https://like-me-seven.vercel.app/api/insert"
+    const ResultsApi = "https://like-me-u57sm41q8-pineda.vercel.app/insert"
     const GeneratedMatches = await getMatches(SpotifyAuthCode,ResultsApi, ApplicationKey)
     
 
@@ -175,7 +175,7 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
   return (
     <>
     <Head>
-      <Link href="https://like-me-seven.vercel.app/">
+      <Link href="https://like-me-u57sm41q8-pineda.vercel.app/">
       <title>Like.Me</title>
       </Link>
       <link href="../fonts/style.css" rel="stylesheet"/>
