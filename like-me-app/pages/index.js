@@ -45,7 +45,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
 
             <div className="column">
               <Image
-              src="/icons/icons8-spotify-500.png"
+              src="/icons8-spotify-500.png"
               alt="Spotify Logo"
               height='500px'
               width='500px'
