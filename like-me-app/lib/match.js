@@ -3,11 +3,9 @@ import { connectToDatabase } from "../util/mongodb"
 
 /* 
     A simple brute force is used to generate match percentages. 
-
     A better approach would be to use $setIntersection provided by MongoDB and make the queries on their end but this feature 
     is only avaliable to paid tiers 
     Learn More: https://docs.mongodb.com/manual/reference/operator/aggregation/setIntersection/#exp._S_setIntersection
-
 */ 
 
 export async function match(songsArray){

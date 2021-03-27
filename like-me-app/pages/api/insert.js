@@ -1,3 +1,4 @@
+  
 import { connect, ReplSet } from "mongodb"
 import { connectToDatabase } from "../../util/mongodb"
 import { getRefreshToken } from "../../lib/refreshToken"
@@ -125,9 +126,9 @@ export default async function handler(req,res){
         if(exist != true){
 
             // User Profile Picture 
-            let image = user['images'][0]['url']
-            if(image.length === 0 || typeof(image) === undefined){
-                image = "../../public/img/user.png"
+            let image = user['images'][0]['url'] 
+            if(image === undefined){
+                image = '/user.png'
             }
             const profilePage = `https://open.spotify.com/user/${display_name}`
 
@@ -221,6 +222,7 @@ export default async function handler(req,res){
 
             // STATUS LOG - DATABASE UPDATE 
             console.log('Successfully Uploaded User To Database')
+            console.log('SENDING RESULTS....')
 
 
             res.send(results);
@@ -240,12 +242,10 @@ export default async function handler(req,res){
             /*
                 Will generate new matches and 
                 Updates the database if the user has made changes to their saved songs library
-
                 Limitations - User could end up making edits on songs array but still have the same length 
                 Best option would be to compare each match to see if there are any new songs id added 
                 OR
                 to do it by date comparison and creating a date entry row 
-
             */ 
             
             if(userDatabaseSongs.length != currentSongs.length){

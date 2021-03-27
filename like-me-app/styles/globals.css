@@ -161,3 +161,77 @@
   
   
 }
+
+
+
+
+
+
+
+
+
+
+/*  ANIMATION STYLING */
+
+/* CREDIT GOES TO https://codepen.io/ciprianionescu/pen/GpqEdw */ 
+
+#preloader {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+#preloader circle.outer {
+  fill: transparent;
+  stroke: #00eca8;
+  stroke-dashoffset: 1000;
+  stroke-width: 20;
+  stroke-dasharray: 1000;
+  transform-origin: 50% 50%;
+  animation: spin 2s linear forwards infinite;
+}
+
+@keyframes spin {
+  0% {
+    stroke-dashoffset: 1000;
+    transform: rotate(-90deg);
+    stroke-width: 20;
+  }
+  25% {
+    stroke-dashoffset: 800;
+    stroke-width: 30;
+  }
+  80% {
+    stroke-dashoffset: 1000;
+    transform: rotate(270deg);
+    stroke-width: 20;
+  }
+}
+
+#preloader circle.drop {
+  fill: #00eca8;
+  stroke: transparent;
+  transform-origin: 50% 50%;
+  animation: drop 2s linear forwards infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(0, -150px);
+    opacity: 1;
+  }
+  34% {
+    transform: translate(0, 150px);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

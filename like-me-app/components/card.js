@@ -1,6 +1,8 @@
 import 'bulma/css/bulma.css'
 
 
+
+
 export default function ProfileCard({displayName,profileImage,percentage,profilePage}){
     return(
         
@@ -28,4 +30,3 @@ export default function ProfileCard({displayName,profileImage,percentage,profile
         
     )
 }
-
