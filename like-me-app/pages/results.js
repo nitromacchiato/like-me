@@ -175,7 +175,7 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
   return (
     <>
     <Head>
-      <Link href={process.env.NEXT_URL}>
+      <Link href="https://like-me-seven.vercel.app/">
       <title>Like.Me</title>
       </Link>
       <link href="../fonts/style.css" rel="stylesheet"/>
