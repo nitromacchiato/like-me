@@ -13,7 +13,7 @@ async function getMatches(token,ResultsApi,ApplicationKey){
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: token, secret: ApplicationKey })
+    body: JSON.stringify({ code: token})
   };
 
   const getMatches = await fetch(ResultsApi , requestOptions)
@@ -140,7 +140,7 @@ function Matches(Results){
 
 
 
-export default function Home({SpotifyAuthCode, ApplicationKey}) {
+export default function Home({SpotifyAuthCode}) {
 
   const [loading,setLoading] = useState(true)
   const [userMatches , setUserMatches] = useState([])
@@ -151,7 +151,7 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
 
 
     const ResultsApi = "https://like-me-u57sm41q8-pineda.vercel.app/insert"
-    const GeneratedMatches = await getMatches(SpotifyAuthCode,ResultsApi, ApplicationKey)
+    const GeneratedMatches = await getMatches(SpotifyAuthCode,ResultsApi)
     
 
     setUserMatches(GeneratedMatches)
@@ -201,12 +201,12 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
 export async function getServerSideProps({query}) {
 
   const SpotifyAuthCode = query.code
-  const ApplicationKey = process.env.LIKE_ME_API_KEY
+
 
 
   
 
   return {
-    props: {SpotifyAuthCode, ApplicationKey}, // will be passed to the page component as props
+    props: {SpotifyAuthCode}, // will be passed to the page component as props
   }
 }
