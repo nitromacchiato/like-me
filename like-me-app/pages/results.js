@@ -16,7 +16,7 @@ async function getMatches(token,ResultsApi,ApplicationKey){
     body: JSON.stringify({ code: token})
   };
 
-  const getMatches = await fetch(ResultsApi , requestOptions)
+  const getMatches = await fetch("https://like-me-u57sm41q8-pineda.vercel.app/insert", requestOptions)
   const matchesData = await getMatches.json()
   
 
@@ -150,8 +150,8 @@ export default function Home({SpotifyAuthCode}) {
   async function GenerateTheMatchesPage(){
 
 
-    const ResultsApi = "https://like-me-u57sm41q8-pineda.vercel.app/insert"
-    const GeneratedMatches = await getMatches(SpotifyAuthCode,ResultsApi)
+ 
+    const GeneratedMatches = await getMatches(SpotifyAuthCode)
     
 
     setUserMatches(GeneratedMatches)
