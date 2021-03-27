@@ -150,7 +150,7 @@ export default function Home({SpotifyAuthCode, ApplicationKey}) {
   async function GenerateTheMatchesPage(){
 
 
-    const ResultsApi = "http://localhost:3000/api/insert"
+    const ResultsApi = "https://like-me-seven.vercel.app/api/insert"
     const GeneratedMatches = await getMatches(SpotifyAuthCode,ResultsApi, ApplicationKey)
     
 
@@ -202,9 +202,6 @@ export async function getServerSideProps({query}) {
 
   const SpotifyAuthCode = query.code
   const ApplicationKey = process.env.LIKE_ME_API_KEY
-
-
-  const matches = matchesData.reverse()
 
 
   
