@@ -46,8 +46,8 @@ export default function Home({SPOTIFY_AUTH_URL}) {
                   <button className="button is-black desktop-style sub-text">Find Matches</button>
                 </Link>
   
-              </span>
-            </div>
+              </span>  
+            </div> 
 
             <div className="column">
               <Image
