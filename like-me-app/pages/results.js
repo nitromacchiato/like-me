@@ -175,7 +175,7 @@ export default function Home({SpotifyAuthCode}) {
   return (
     <>
     <Head>
-      <Link href="https://like-me-u57sm41q8-pineda.vercel.app/">
+      <Link href="https://like-me-one.vercel.app">
       <title>Like.Me</title>
       </Link>
       <link href="../fonts/style.css" rel="stylesheet"/>

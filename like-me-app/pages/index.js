@@ -24,7 +24,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
       <div className="hero-head" style={{margin:"0 auto"}}>
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
           <div className="column center">
-            <Link href="https://like-me-u57sm41q8-pineda.vercel.app/">
+            <Link href="https://like-me-one.vercel.app">
               <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
             </Link>
           </div>
@@ -48,6 +48,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
   
               </span>  
             </div> 
+            
 
             <div className="column">
               <Image
