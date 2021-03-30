@@ -42,7 +42,7 @@ function LoadingScreen(){
 
       <sction className="hero is-fullheight ">
 
-        <div className="hero-body" style={{margin:"0 auto"}}>
+        <div className="hero-body has-text-centered" style={{margin:"0 auto"}}>
           
           <p className="title">Loading..... </p>
 
@@ -57,7 +57,7 @@ function LoadingScreen(){
 }
 
 
-function Matches(Results,moreThanOne){
+function Matches(Results){
 
   console.log('RESULTS ARE ', Results)
 
@@ -92,13 +92,9 @@ function Matches(Results,moreThanOne){
             <div className="results-container" style={{maxWidth:'612px', display:'flex', justifyContent:'center'}}>
 
                 {/* Display Remaining results if there is more than one  */}
-                {moreThanOne && 
-          
+                {
                   Results.map((user)=>{
-                    // Counter 
-                    let count = 0 
-
-
+       
                     // Set Variables 
                     const displayName = user[0]
                     const profileImage = user[2]
@@ -152,14 +148,6 @@ export default function Home({SpotifyAuthCode}) {
   const [userMatches , setUserMatches] = useState([])
 
 
-  // check if there is more than match. 
-  const[moreThanOne, setMoreThanOne ] = useState(false)
-
-  if(userMatches.length > 1 ){
-    setMoreThanOne(true)
-  }
-
-
 
   async function GenerateTheMatchesPage(){
 
@@ -203,7 +191,7 @@ export default function Home({SpotifyAuthCode}) {
 
     {!loading && 
     
-      Matches(userMatches,moreThanOne)
+      Matches(userMatches)
     
     }
   </>   
