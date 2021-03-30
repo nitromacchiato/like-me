@@ -90,8 +90,6 @@ async function GenerateSongsArray(accessToken){
 
 export default async function handler(req,res){
 
-    res.header('Access-Control-Allow-Origin', '*');
-
     // Retrieve the code from the query 
     const code = req.body['code']
     const key = req.body['secret']
