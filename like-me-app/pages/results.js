@@ -165,7 +165,7 @@ export default function Home({SpotifyAuthCode}) {
     setUserMatches(GeneratedMatches)
     
 
-   if(GeneratedMatches.length > 2){
+   if(GeneratedMatches.length > 0){
      setLoading(false)
    }
 
