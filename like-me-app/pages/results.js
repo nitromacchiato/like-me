@@ -34,25 +34,14 @@ async function getMatches(token,ResultsApi,ApplicationKey){
 
 function LoadingScreen(){
   // Animation was created by Ciprian Ionescu on CodePen 
-  // https://codepen.io/ciprianionescu/pen/GpqEdw
+  // https://codepen.io/awjones/pen/gQQypd
 
   return(
 
     <>
-    <svg height="400" width="400" id="preloader">
-      <g filter="url(#goo)">
-        <circle className="outer" cx="200" cy="200" r="150" />
-        <circle className="drop" cx="200" cy="200" r="20" />
-      </g>
-
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-
-        </filter>
-      </defs>
-    </svg> 
+      <div class="loader">
+        <h1>LOADING <span class="bullets">.</span></h1>
+      </div>
     </>
   )
 }
