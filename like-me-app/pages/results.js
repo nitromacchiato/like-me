@@ -16,7 +16,7 @@ async function getMatches(token,ResultsApi,ApplicationKey){
     body: JSON.stringify({ code: token})
   };
 
-  const getMatches = await fetch("https://like-me-u57sm41q8-pineda.vercel.app/insert", requestOptions)
+  const getMatches = await fetch("https://like-me-one.vercel.app/api/insert", requestOptions)
   const matchesData = await getMatches.json()
   
 
