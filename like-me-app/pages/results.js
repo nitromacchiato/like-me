@@ -45,6 +45,7 @@ function LoadingScreen(){
         <div className="hero-body has-text-centered" style={{margin:"0 auto"}}>
           
           <p className="title">Loading..... </p>
+          <p className="subtitle">Please give us a second while we generate your matches</p>
 
         </div>
 
