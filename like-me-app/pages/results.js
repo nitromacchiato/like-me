@@ -48,7 +48,7 @@ function LoadingScreen(){
             <p className="title">Loading..... </p>
           </div>
 
-          <div>
+          <div className="block">
             <p className="subtitle">Please give us a second while we generate your matches</p>
           </div>
 
