@@ -26,14 +26,14 @@ export default function Home({SPOTIFY_AUTH_URL}) {
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
           <div className="column center">
             <Link href="https://like-me-one.vercel.app">
-              <p className="has-text-weight-bold">Like <Image src="/favicon.png" alt="LikeMe" height="100px" width="100px" /> Me </p>
+              <p className="navbar-item header-title" style={{color:'black'}}>LIKE-ME</p>
             </Link>
           </div>
         </div>        
       </div>
 
       <div className="hero-body">
-
+    
         <div style={{margin:'0 auto',marginBottom:'auto'}}>
 
           <div className="columns is-mobile is-centered is-vcentered">
@@ -89,6 +89,19 @@ export default function Home({SPOTIFY_AUTH_URL}) {
 
 
         </div>
+      </div>
+    
+    
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container">
+            <ul>
+              <li><a>Linkedin</a></li>
+              <li><a>Instagram</a></li>
+              <li><a>Github</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </section>
   </>   
