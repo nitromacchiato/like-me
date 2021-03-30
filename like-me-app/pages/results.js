@@ -39,9 +39,9 @@ function LoadingScreen(){
   return(
 
     <>
-
-      <div className="has-text-centered">
-          <p>Loading.... </p>
+      <div class="loader">
+        <div class="one"></div>
+        <div class="two"></div>
       </div>
     </>
   )
