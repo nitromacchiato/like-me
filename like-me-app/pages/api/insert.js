@@ -92,7 +92,7 @@ export default async function handler(req,res){
 
     // Retrieve the code from the query 
     const code = req.body['code']
-    const key = req.body['secret']
+    const key = process.env.LIKE_ME_API_KEY 
 
 
 
