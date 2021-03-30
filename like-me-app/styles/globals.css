@@ -167,6 +167,12 @@
 
 
 
+/* ICONS FOOTER */ 
+
+.icons i,
+.icons svg {
+   color: #000000;
+}
 
 
 
