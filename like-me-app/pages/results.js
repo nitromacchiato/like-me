@@ -46,9 +46,10 @@ function LoadingScreen(){
           <div className="loading-text">ello</div>
         </div>
       </div>
-    
-      <p className="has-text-info">Checkout who designed this loading screen <a href="http://www.jemimaabu.com" target="_blank">www.jemimaabu.com</a></p>
 
+      <main>
+        <p className="has-text-info">Checkout who designed this loading screen <a href="http://www.jemimaabu.com" target="_blank">www.jemimaabu.com</a></p>
+      </main>
     </>
   )
 }
