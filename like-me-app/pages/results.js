@@ -58,7 +58,7 @@ function LoadingScreen(){
 }
 
 
-function Matches(Results){
+function Matches(Results,moreThanOne){
 
   console.log('RESULTS ARE ', Results)
 
@@ -92,28 +92,30 @@ function Matches(Results){
 
             <div className="results-container" style={{maxWidth:'612px', display:'flex', justifyContent:'center'}}>
 
-                {/* Display Remaining results  */}
-                {Results.map((user)=>{
-                  // Counter 
-                  let count = 0 
+                {/* Display Remaining results if there is more than one  */}
+                {moreThanOne && 
+          
+                  Results.map((user)=>{
+                    // Counter 
+                    let count = 0 
 
 
-                  // Set Variables 
-                  const displayName = user[0]
-                  const profileImage = user[2]
-                  const percentage = Math.round(user[3])
-                  const profilePage = user[1]
+                    // Set Variables 
+                    const displayName = user[0]
+                    const profileImage = user[2]
+                    const percentage = Math.round(user[3])
+                    const profilePage = user[1]
 
 
-                  if(Results[0][0] != displayName ){
+                    if(Results[0][0] != displayName ){
 
-                    return(
+                      return(
 
-                      <div className="card-spacing" style={{margin:'0 auto'}}>
-                            <ProfileCard displayName={displayName} profileImage={profileImage} percentage={percentage} profilePage={profilePage}/>
-                      </div>
+                        <div className="card-spacing" style={{margin:'0 auto'}}>
+                              <ProfileCard displayName={displayName} profileImage={profileImage} percentage={percentage} profilePage={profilePage}/>
+                        </div>
 
-                    )
+                      )
 
                   }
                 })
@@ -146,8 +148,17 @@ function Matches(Results){
 
 export default function Home({SpotifyAuthCode}) {
 
+  // Set loading screen 
   const [loading,setLoading] = useState(true)
   const [userMatches , setUserMatches] = useState([])
+
+
+  // check if there is more than match. 
+  const[moreThanOne, setMoreThanOne ] = useState(false)
+
+  if(userMatches.length > 1 ){
+    setMoreThanOne(true)
+  }
 
 
 
@@ -193,7 +204,7 @@ export default function Home({SpotifyAuthCode}) {
 
     {!loading && 
     
-      Matches(userMatches)
+      Matches(userMatches,moreThanOne)
     
     }
   </>   
