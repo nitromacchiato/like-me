@@ -1,27 +1,20 @@
 import 'bulma/css/bulma.css'
+import {useState} from "react"
 
-
-function CheckForProfileImage(profileImage){
-    // Gets the "https:" of the profile image url 
-    // Ex. https://i.scdn.co/image/ab6775700000ee85ead44ce2dca6cc9b369b2ee6 turns into "https:"
-    const https = profileImage.split(':')[0]
-
-    if(https === "https"){
-        return profileImage
-    } else {
-        return "/user.png"
-    }
-
-}
 
 
 
 export default function ProfileCard({displayName,profileImage,percentage,profilePage}){
 
-    const SetProfilePicture = async function(){
-        return CheckForProfileImage(profileImage)
-    }
+    const [picture,setPicture] = useState("")
 
+    const https = profileImage.split(':')[0]
+
+    if(https === "https"){
+        setPicture(profileImage)
+    } else {
+        setPicture("/user.png")
+    }
 
 
 
@@ -34,7 +27,7 @@ export default function ProfileCard({displayName,profileImage,percentage,profile
                     <a href={profilePage}  target="_blank">
                         <div>
                             <figure className="image image_placement">
-                                <img style={{maxWidth:'auto',maxHeight:'170px'}} src={SetProfilePicture} />
+                                <img style={{maxWidth:'auto',maxHeight:'170px'}} src={picture} />
                             </figure>
                         </div>
                     </a>
