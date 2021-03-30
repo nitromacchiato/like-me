@@ -41,16 +41,16 @@ function LoadingScreen(){
     <>
       <style jsx>{`
         body {
-          display: flex;
-          height: 100vh;
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-          background: #512DA8;
+          display: flex !important;
+          height: 100vh !important;
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          background: #512DA8 !important;
         }
      `}</style>
 
-     
+
       <div class="loader">
         <div class="one"></div>
         <div class="two"></div>
