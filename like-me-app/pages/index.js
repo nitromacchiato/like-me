@@ -98,21 +98,21 @@ export default function Home({SPOTIFY_AUTH_URL}) {
           <div class="container">
             <ul>
               <li>
-                <a class="button is-medium is-linkedin" href="https://www.linkedin.com/in/andy-pineda/">
+                <a class="button is-medium is-linkedin is-ghost" href="https://www.linkedin.com/in/andy-pineda/">
                     <span class="icon">
                       <i class="fab fa-linkedin fa-lg"></i>
                     </span>
                 </a>
               </li>
               <li>
-                <a class="button is-medium is-instagram" href="https://www.instagram.com/andypineda__/">
+                <a class="button is-medium is-instagram is-ghost" href="https://www.instagram.com/andypineda__/">
                     <span class="icon">
                       <i class="fab fa-instagram fa-lg"></i>
                     </span>
                 </a>  
               </li>
               <li>
-                <a class="button is-medium is-gituhb" href="https://github.com/nitromacchiato">
+                <a class="button is-medium is-gituhb is-ghost" href="https://github.com/nitromacchiato">
                     <span class="icon">
                       <i class="fab fa-github fa-lg"></i>
                     </span>
