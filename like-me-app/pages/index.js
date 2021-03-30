@@ -17,6 +17,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
       <link rel="icon" href="/favicon.ico" />
       <link href="/fonts/style.css" rel="stylesheet"/>
       <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23eadbc7%22></rect><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2257%22>💫</text></svg>" />
+      <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
     </Head>
 
     <section className="hero is-fullheight">
@@ -106,7 +107,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
               <li>
                 <a class="button is-medium is-instagram" href="https://www.instagram.com/andypineda__/">
                     <span class="icon">
-                      <i class="fab is-instagram fa-lg"></i>
+                      <i class="fab fa-instagram fa-lg"></i>
                     </span>
                 </a>  
               </li>
