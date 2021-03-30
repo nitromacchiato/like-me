@@ -39,6 +39,18 @@ function LoadingScreen(){
   return(
 
     <>
+      <style jsx>{`
+        body {
+          display: flex;
+          height: 100vh;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          background: #512DA8;
+        }
+     `}</style>
+
+     
       <div class="loader">
         <div class="one"></div>
         <div class="two"></div>
