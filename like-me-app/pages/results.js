@@ -40,16 +40,9 @@ function LoadingScreen(){
 
     <>
 
-      <div className="loader">
-        <div className="load-text">
-          <div className="loaded-text">L</div>
-          <div className="loading-text">oading...</div>
-        </div>
+      <div className="has-text-centered">
+          <p>Loading.... </p>
       </div>
-
-      <main>
-        <p className="has-text-info">Checkout who designed this loading screen <a href="http://www.jemimaabu.com" target="_blank">www.jemimaabu.com</a></p>
-      </main>
     </>
   )
 }
