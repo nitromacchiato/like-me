@@ -26,7 +26,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
         <div className="columns is-mobile is-marginless heading has-text-weight-bold">
           <div className="column center">
             <Link href="https://like-me-one.vercel.app">
-              <p className="navbar-item header-title" style={{color:'black'}}>LIKE.ME</p>
+              <Image src="/favicon.png" alt="LikeMe" />
             </Link>
           </div>
         </div>        
