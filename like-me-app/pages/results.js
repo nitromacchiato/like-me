@@ -81,7 +81,7 @@ function Matches(Results){
     <div className="hero-body" style={{margin:"0 auto"}}>
 
         <div className="top-result">
-            <ProfileCard displayName={Results[0][0]} profileImage={Results[0][2]} percentage={Results[0][3]} profilePage={Results[0][1]} />
+            <ProfileCard displayName={Results[0][0]} profileImage={Results[0][2]} percentage={Math.round(Results[0][3])} profilePage={Results[0][1]} />
 
             <div className="box has-text-centered">
                 <p>You and {Results[0][0]} have the most songs in common! Check their page out</p>
@@ -101,7 +101,7 @@ function Matches(Results){
                   // Set Variables 
                   const displayName = user[0]
                   const profileImage = user[2]
-                  const percentage = user[3]
+                  const percentage = Math.round(user[3])
                   const profilePage = user[1]
 
 

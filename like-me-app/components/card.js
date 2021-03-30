@@ -9,6 +9,7 @@ export default function ProfileCard({displayName,profileImage,percentage,profile
         <div className="columns is-multiline is-vcentered is-mobile is-11">
             <div className="column is-one-fifth  box has-text-centered button" style={{margin:"0 auto",width:'154px',height:'180px'}}>
                 <div className="has-text-centered ">
+                    
                     <a href={profilePage}  target="_blank">
                         <div>
                             <figure className="image image_placement">
