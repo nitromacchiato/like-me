@@ -92,13 +92,31 @@ export default function Home({SPOTIFY_AUTH_URL}) {
       </div>
     
     
-      <div class="hero-foot">
+      <div class="hero-foot" style={{margin:"0 auto"}}>
         <nav class="tabs">
           <div class="container">
             <ul>
-              <li><a>Linkedin</a></li>
-              <li><a>Instagram</a></li>
-              <li><a>Github</a></li>
+              <li>
+                <a class="button is-medium is-linkedin" href="https://www.linkedin.com/in/andy-pineda/">
+                    <span class="icon">
+                      <i class="fab is-linkedin fa-lg"></i>
+                    </span>
+                </a>
+              </li>
+              <li>
+                <a class="button is-medium is-instagram" href="https://www.instagram.com/andypineda__/">
+                    <span class="icon">
+                      <i class="fab is-instagram fa-lg"></i>
+                    </span>
+                </a>  
+              </li>
+              <li>
+                <a class="button is-medium is-gituhb" href="https://github.com/nitromacchiato">
+                    <span class="icon">
+                      <i class="fab is-github fa-lg"></i>
+                    </span>
+                </a>  
+              </li>
             </ul>
           </div>
         </nav>
