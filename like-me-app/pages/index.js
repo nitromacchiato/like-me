@@ -40,7 +40,7 @@ export default function Home({SPOTIFY_AUTH_URL}) {
             <div className="column is-two-fifths">
               <span>
       
-                <p className="title title-font-style hide-mobile" style={{color:'black'}}>Find people with similar music <br/> taste  as you on Spotify</p>
+                <p className="title title-font-style hide-mobile" style={{color:'black'}}>See who likes the same music <br/> as you on Spotify</p>
                  
 
                 <Link href={SPOTIFY_AUTH_URL}>
@@ -71,11 +71,10 @@ export default function Home({SPOTIFY_AUTH_URL}) {
             <div className="block" style={{marginRight:'5px',marginLeft:'5px'}}>
               <p className="block sub-text">1. Connect to your Spotify account</p>
               <p className="block sub-text">
-                2. We generate matches based off who has the highest percentage of similar music as you based 
-                off your liked songs
+                2. We compare your music library to users in our database
               </p>
               <p className="block sub-text">
-                3. See a list of users ranked from highest matching percentage to least
+                3. See a list of users with the highest matching percentage
               </p>
             </div>
 
