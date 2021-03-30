@@ -42,8 +42,8 @@ function LoadingScreen(){
 
       <div className="loader">
         <div className="load-text">
-          <div className="loaded-text">H</div>
-          <div className="loading-text">ello</div>
+          <div className="loaded-text">L</div>
+          <div className="loading-text">oading...</div>
         </div>
       </div>
 
