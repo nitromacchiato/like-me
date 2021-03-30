@@ -42,13 +42,13 @@ function LoadingScreen(){
 
       <sction className="hero is-fullheight ">
 
-        <div className="hero-body has-text-centered" style={{margin:"0 auto"}}>
+        <div className="hero-body has-text-centered" style={{margin:"0 auto", display:'flex', flexDirection:'column'}}>
           
           <div className="block">
             <p className="title">Loading..... </p>
           </div>
 
-          <div className="block" style={{display:'flex', flexDirection:'column' }}>
+          <div className="block">
             <p className="subtitle">Please give us a second while we generate your matches</p>
           </div>
 
