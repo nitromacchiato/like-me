@@ -8,7 +8,7 @@ export default function ProfileCard({displayName,profileImage,percentage,profile
 
     const [picture,setPicture] = useState("")
 
-    const https = profileImage.split(':')[0]
+    const https = profileImage.split(':')[0] || null 
 
     if(https === "https"){
         setPicture(profileImage)
